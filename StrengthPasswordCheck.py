@@ -19,5 +19,4 @@ else:
     if len(recommend) == 0:
         print('Strong password')
     else:
-        fin_len = len(recommend)
-        print(f'Weak password. Recommendations: {recommend[: fin_len - 2]}.')
+        print(f'Weak password. Recommendations: {recommend[:-2]}.')
