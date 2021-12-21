@@ -1,25 +1,23 @@
 password = input("Enter the password:")
 
-lenght = len(password)
-recomend = ''
-if lenght < 12:
-    recomend += f'increase the number of characters - {12 - lenght}, '
+length = len(password)
+recommend = ''
+if length < 12:
+    recommend += f'increase the number of characters - {12 - length}, '
 if not any(map(str.isupper, password)):
-    recomend += 'add 1 capital letter, '
+    recommend += 'add 1 capital letter, '
 if not any(map(str.islower, password)):
-    recomend += 'add 1 lowercase letter, '
+    recommend += 'add 1 lowercase letter, '
 if not any(map(str.isdigit, password)):
-    recomend += 'add 1 digit, '
-isspec = any(simbol in '!@#$%^&*()-+' for simbol in password)
-if not isspec:
-    recomend += 'add 1 special character, '
-if not password.isalnum() and not isspec:
+    recommend += 'add 1 digit, '
+is_spec = any(symbol in '!@#$%^&*()-+' for symbol in password)
+if not is_spec:
+    recommend += 'add 1 special character, '
+if not password.isalnum() and not is_spec:
     print(f'Error, Forbidden character')
 else:
-    if len(recomend) == 0:
+    if len(recommend) == 0:
         print('Strong password')
     else:
-        fin_len = len(recomend)
-        print(f'Weak password. Recommendations: {recomend[: fin_len - 2]}.')
-
-
+        fin_len = len(recommend)
+        print(f'Weak password. Recommendations: {recommend[: fin_len - 2]}.')
